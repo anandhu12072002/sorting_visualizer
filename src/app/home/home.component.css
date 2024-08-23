@@ -1,0 +1,37 @@
+.bar {
+    width: 30px; /* Adjust the width of each bar if needed */
+    background-color: #007bff;
+    transition: height 0.5s ease, transform 0.5s ease;
+  }
+  
+  .bar-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center; /* Center bars in the container */
+    height: 300px;
+    margin-top: 20px;
+    padding: 0 10px;
+  }
+  
+  .bar-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 2px; /* Reduce the margin between bars */
+    transition: transform 0.5s ease;
+  }
+  
+  .bar-label {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #333;
+  }
+
+  .sorting-complete-message {
+    color: green;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  

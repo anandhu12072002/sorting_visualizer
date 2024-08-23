@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>Welcome to the Home Page!</h1>
+    <p *ngIf="message">{{ message }}</p>
+  
+    <ng-container *ngIf="isAuthenticated">
+      <form (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="form-group">
+          <label for="numbers">Enter 10 numbers (comma-separated):</label>
+          <input type="text" id="numbers" [(ngModel)]="numbersInput" name="numbersInput" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Sort and Visualize</button>
+      </form>
+  
+      <div *ngIf="sortedNumbers.length > 0" class="bar-container">
+        <div *ngFor="let number of sortedNumbers" class="bar-wrapper">
+          <div class="bar" [ngStyle]="{ 'height': number + 'px' }"></div>
+          <span class="bar-label">{{ number }}</span>
+        </div>
+      </div>
+  
+      <!-- Display sorting complete message -->
+      <p *ngIf="sortingComplete" class="sorting-complete-message">Sorting Complete</p>
+    </ng-container>
+  
+    <ng-container *ngIf="!isAuthenticated">
+    </ng-container>
+  </div>
+  
